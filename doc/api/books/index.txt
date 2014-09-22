@@ -1,0 +1,196 @@
+Getting a list of books
+-----------------------
+
+Parameters:
+  * access_token - Authorization Token
+
+Request:
+  GET /books?access_token=eb23a49b039461a2f9a7b59bcdb8a049
+  Accept: application/vnd.libraryapi.v1+json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+  access_token=eb23a49b039461a2f9a7b59bcdb8a049
+
+Response:
+  Status: 200 OK
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Length: 117
+  Content-Type: application/vnd.libraryapi.v1+json; charset=utf-8
+  ETag: "0b95ad2812fef8498e7c904ff9869ce4"
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-Request-Id: 854af768-a79c-44cf-8177-ebdbf7ae32fd
+  X-Runtime: 0.021694
+  X-XSS-Protection: 1; mode=block
+
+  [{"id":293,"title":"Title","blurb":"blurb","description":"description","author":{"id":288,"name":"Christine Towne"}}]
+
+
+Deleting a book
+---------------
+
+Parameters:
+  * access_token - Authorization Token
+
+Request:
+  DELETE /books/295
+  Accept: application/vnd.libraryapi.v1+json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+  {"access_token":"b23dac9ebeab22d97dcb5296718f0a34"}
+
+Response:
+  Status: 204 No Content
+  Cache-Control: no-cache
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-Request-Id: cd985d76-01b9-45b3-bba4-8679d1626ee8
+  X-Runtime: 0.005994
+  X-XSS-Protection: 1; mode=block
+
+
+Getting the headers
+-------------------
+
+Parameters:
+  * access_token - Authorization Token
+
+Request:
+  HEAD /books
+  Accept: application/vnd.libraryapi.v1+json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+  {"access_token":"a69c174bee6c62ef1c9ec367f8d36476"}
+
+Response:
+  Status: 200 OK
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Type: application/vnd.libraryapi.v1+json; charset=utf-8
+  ETag: "958c10c2719cc020e66fc223c15e6420"
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-Request-Id: 3e89e55a-88b6-4429-beab-620965befa3d
+  X-Runtime: 0.004684
+  X-XSS-Protection: 1; mode=block
+
+
+Getting a specific book
+-----------------------
+
+Parameters:
+  * access_token - Authorization Token
+  * id - Id
+
+Request:
+  GET /books/299?access_token=31f19480d43263426fdb8980a299331b
+  Accept: application/vnd.libraryapi.v1+json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+  access_token=31f19480d43263426fdb8980a299331b
+
+Response:
+  Status: 200 OK
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Length: 122
+  Content-Type: application/vnd.libraryapi.v1+json; charset=utf-8
+  ETag: "675f866becd50228937ed5cebc1e54ff"
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-Request-Id: 6f024f07-d181-4855-8954-6efc9db818a9
+  X-Runtime: 0.005462
+  X-XSS-Protection: 1; mode=block
+
+  {"book":{"id":299,"title":"Title","blurb":"blurb","description":"description","author":{"id":294,"name":"Martina Nader"}}}
+
+
+Creating a book
+---------------
+
+Parameters:
+  * access_token - Authorization Token
+  * title - Title
+  * description - Description
+  * blurb - Excerpt of Text
+
+Request:
+  POST /books
+  Accept: application/vnd.libraryapi.v1+json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+  {"access_token":"3aa03044a5eb59c10c4552aaf14e147f","book":{"title":"Title","description":"description","blurb":"blurb"}}
+
+Response:
+  Status: 201 Created
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Length: 121
+  Content-Type: application/vnd.libraryapi.v1+json; charset=utf-8
+  ETag: "37d57e057ebe521b3b38fea758bf9e8e"
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-Request-Id: 8f60b7e8-99ca-4e9f-8e93-3fb5f5f51545
+  X-Runtime: 0.007708
+  X-XSS-Protection: 1; mode=block
+
+  {"book":{"id":303,"title":"Title","blurb":"blurb","description":"description","author":{"id":296,"name":"Karley Klein"}}}
+
+Request:
+  GET /books/303
+  Accept: application/vnd.libraryapi.v1+json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+  access_token=3aa03044a5eb59c10c4552aaf14e147f
+
+Response:
+  Status: 200 OK
+  Cache-Control: max-age=0, private, must-revalidate
+  Content-Length: 121
+  Content-Type: application/vnd.libraryapi.v1+json; charset=utf-8
+  ETag: "37d57e057ebe521b3b38fea758bf9e8e"
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-Request-Id: 479898b7-e70b-4251-b02c-285e70811d60
+  X-Runtime: 0.004813
+  X-XSS-Protection: 1; mode=block
+
+  {"book":{"id":303,"title":"Title","blurb":"blurb","description":"description","author":{"id":296,"name":"Karley Klein"}}}
+
+
+Updating a book title
+---------------------
+
+Parameters:
+  * id - Id
+  * access_token - Authorization Token
+  * title - Title
+  * description - Description
+  * blurb - Excerpt of Text
+
+Request:
+  PUT /books/304
+  Accept: application/vnd.libraryapi.v1+json
+  Content-Type: application/json
+  Cookie: 
+  Host: example.org
+
+  {"access_token":"1797d6135f92d42000e1515232b281d1","book":{"title":"New Title","description":"description","blurb":"blurb"}}
+
+Response:
+  Status: 204 No Content
+  Cache-Control: no-cache
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-Request-Id: 7b2a1541-a821-417b-ad47-ddeaeaad9391
+  X-Runtime: 0.007021
+  X-XSS-Protection: 1; mode=block

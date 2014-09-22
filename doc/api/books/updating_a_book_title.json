@@ -1,0 +1,84 @@
+{
+  "resource": "Books",
+  "http_method": "PUT",
+  "route": "/books/:id",
+  "description": "Updating a book title",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "id",
+      "description": "Id"
+    },
+    {
+      "name": "access_token",
+      "description": "Authorization Token"
+    },
+    {
+      "scope": "book",
+      "name": "title",
+      "description": "Title"
+    },
+    {
+      "scope": "book",
+      "name": "description",
+      "description": "Description"
+    },
+    {
+      "scope": "book",
+      "name": "blurb",
+      "description": "Excerpt of Text"
+    }
+  ],
+  "response_fields": [
+    {
+      "scope": "book",
+      "name": "id",
+      "description": "Id"
+    },
+    {
+      "scope": "book",
+      "name": "title",
+      "description": "Title"
+    },
+    {
+      "scope": "book",
+      "name": "description",
+      "description": "Description"
+    },
+    {
+      "scope": "book",
+      "name": "blurb",
+      "description": "Excerpt of Text"
+    }
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "/books/304",
+      "request_body": "{\"access_token\":\"1797d6135f92d42000e1515232b281d1\",\"book\":{\"title\":\"New Title\",\"description\":\"description\",\"blurb\":\"blurb\"}}",
+      "request_headers": {
+        "Accept": "application/vnd.libraryapi.v1+json",
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 204,
+      "response_status_text": "No Content",
+      "response_body": null,
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "7b2a1541-a821-417b-ad47-ddeaeaad9391",
+        "X-Runtime": "0.007021"
+      },
+      "response_content_type": null,
+      "curl": "curl \"http://localhost:3000/books/304\" -d '{\"access_token\":\"1797d6135f92d42000e1515232b281d1\",\"book\":{\"title\":\"New Title\",\"description\":\"description\",\"blurb\":\"blurb\"}}' -X PUT \\\n\t-H \"Accept: application/vnd.libraryapi.v1+json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

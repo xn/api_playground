@@ -1,0 +1,113 @@
+{
+  "resource": "Books",
+  "http_method": "POST",
+  "route": "/books",
+  "description": "Creating a book",
+  "explanation": "First, create a book, then make a later request to get it back",
+  "parameters": [
+    {
+      "name": "access_token",
+      "description": "Authorization Token"
+    },
+    {
+      "scope": "book",
+      "name": "title",
+      "description": "Title"
+    },
+    {
+      "scope": "book",
+      "name": "description",
+      "description": "Description"
+    },
+    {
+      "scope": "book",
+      "name": "blurb",
+      "description": "Excerpt of Text"
+    }
+  ],
+  "response_fields": [
+    {
+      "scope": "book",
+      "name": "id",
+      "description": "Id"
+    },
+    {
+      "scope": "book",
+      "name": "title",
+      "description": "Title"
+    },
+    {
+      "scope": "book",
+      "name": "description",
+      "description": "Description"
+    },
+    {
+      "scope": "book",
+      "name": "blurb",
+      "description": "Excerpt of Text"
+    }
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/books",
+      "request_body": "{\"access_token\":\"3aa03044a5eb59c10c4552aaf14e147f\",\"book\":{\"title\":\"Title\",\"description\":\"description\",\"blurb\":\"blurb\"}}",
+      "request_headers": {
+        "Accept": "application/vnd.libraryapi.v1+json",
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 201,
+      "response_status_text": "Created",
+      "response_body": "{\"book\":{\"id\":303,\"title\":\"Title\",\"blurb\":\"blurb\",\"description\":\"description\",\"author\":{\"id\":296,\"name\":\"Karley Klein\"}}}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/vnd.libraryapi.v1+json; charset=utf-8",
+        "ETag": "\"37d57e057ebe521b3b38fea758bf9e8e\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "8f60b7e8-99ca-4e9f-8e93-3fb5f5f51545",
+        "X-Runtime": "0.007708",
+        "Content-Length": "121"
+      },
+      "response_content_type": "application/vnd.libraryapi.v1+json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/books\" -d '{\"access_token\":\"3aa03044a5eb59c10c4552aaf14e147f\",\"book\":{\"title\":\"Title\",\"description\":\"description\",\"blurb\":\"blurb\"}}' -X POST \\\n\t-H \"Accept: application/vnd.libraryapi.v1+json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    },
+    {
+      "request_method": "GET",
+      "request_path": "/books/303",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/vnd.libraryapi.v1+json",
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "access_token": "3aa03044a5eb59c10c4552aaf14e147f"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\"book\":{\"id\":303,\"title\":\"Title\",\"blurb\":\"blurb\",\"description\":\"description\",\"author\":{\"id\":296,\"name\":\"Karley Klein\"}}}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/vnd.libraryapi.v1+json; charset=utf-8",
+        "ETag": "\"37d57e057ebe521b3b38fea758bf9e8e\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "479898b7-e70b-4251-b02c-285e70811d60",
+        "X-Runtime": "0.004813",
+        "Content-Length": "121"
+      },
+      "response_content_type": "application/vnd.libraryapi.v1+json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/books/303\" -X GET \\\n\t-H \"Accept: application/vnd.libraryapi.v1+json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

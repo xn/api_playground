@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Books API</title>
+    <meta charset="utf-8">
+    <style>
+      td.required .name:after {
+        float: right;
+        content: "required";
+        font-weight: normal;
+        color: #F08080;
+      }
+
+      p {
+        padding: 15px;
+        font-size: 130%;
+      }
+
+      pre {
+        white-space: pre-wrap;
+      }
+
+      body {
+        margin-left: auto;
+        margin-right: auto;
+        width: 900px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Books API</h1>
+
+      <div class="article">
+        <h2>Creating a book</h2>
+        <h3>POST /books</h3>
+          <p class="explanation">
+            First, create a book, then make a later request to get it back
+          </p>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">access_token</span>
+                </td>
+                <td>
+                  <span class="description">Authorization Token</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">book[title]</span>
+                </td>
+                <td>
+                  <span class="description">Title</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">book[description]</span>
+                </td>
+                <td>
+                  <span class="description">Description</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">book[blurb]</span>
+                </td>
+                <td>
+                  <span class="description">Excerpt of Text</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Response Fields</h3>
+          <table class="response-fields table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">book[id]</span>
+                </td>
+                <td>
+                  <span class="description">Id</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">book[title]</span>
+                </td>
+                <td>
+                  <span class="description">Title</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">book[description]</span>
+                </td>
+                <td>
+                  <span class="description">Description</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">book[blurb]</span>
+                </td>
+                <td>
+                  <span class="description">Excerpt of Text</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Request</h3>
+
+          <h4>Headers</h4>
+          <pre class="request headers">Accept: application/vnd.libraryapi.v1+json
+Content-Type: application/json
+Host: example.org
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">POST /books</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"access_token":"3aa03044a5eb59c10c4552aaf14e147f","book":{"title":"Title","description":"description","blurb":"blurb"}}</pre>
+
+            <h4>cURL</h4>
+            <pre class="request curl">curl &quot;http://localhost:3000/books&quot; -d &#39;{&quot;access_token&quot;:&quot;3aa03044a5eb59c10c4552aaf14e147f&quot;,&quot;book&quot;:{&quot;title&quot;:&quot;Title&quot;,&quot;description&quot;:&quot;description&quot;,&quot;blurb&quot;:&quot;blurb&quot;}}&#39; -X POST \
+	-H &quot;Accept: application/vnd.libraryapi.v1+json&quot; \
+	-H &quot;Content-Type: application/json&quot; \
+	-H &quot;Host: example.org&quot; \
+	-H &quot;Cookie: &quot;</pre>
+
+            <h3>Response</h3>
+            <h4>Headers</h4>
+            <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Content-Type: application/vnd.libraryapi.v1+json; charset=utf-8
+ETag: &quot;37d57e057ebe521b3b38fea758bf9e8e&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 8f60b7e8-99ca-4e9f-8e93-3fb5f5f51545
+X-Runtime: 0.007708
+Content-Length: 121</pre>
+            <h4>Status</h4>
+            <pre class="response status">201 Created</pre>
+              <h4>Body</h4>
+              <pre class="response body">{"book":{"id":303,"title":"Title","blurb":"blurb","description":"description","author":{"id":296,"name":"Karley Klein"}}}</pre>
+          <h3>Request</h3>
+
+          <h4>Headers</h4>
+          <pre class="request headers">Accept: application/vnd.libraryapi.v1+json
+Content-Type: application/json
+Host: example.org
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET /books/303</pre>
+
+            <h4>Query Parameters</h4>
+            <pre class="request query_parameters highlight">access_token: 3aa03044a5eb59c10c4552aaf14e147f</pre>
+
+
+            <h4>cURL</h4>
+            <pre class="request curl">curl &quot;http://localhost:3000/books/303&quot; -X GET \
+	-H &quot;Accept: application/vnd.libraryapi.v1+json&quot; \
+	-H &quot;Content-Type: application/json&quot; \
+	-H &quot;Host: example.org&quot; \
+	-H &quot;Cookie: &quot;</pre>
+
+            <h3>Response</h3>
+            <h4>Headers</h4>
+            <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Content-Type: application/vnd.libraryapi.v1+json; charset=utf-8
+ETag: &quot;37d57e057ebe521b3b38fea758bf9e8e&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 479898b7-e70b-4251-b02c-285e70811d60
+X-Runtime: 0.004813
+Content-Length: 121</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{"book":{"id":303,"title":"Title","blurb":"blurb","description":"description","author":{"id":296,"name":"Karley Klein"}}}</pre>
+      </div>
+    </div>
+  </body>
+</html>

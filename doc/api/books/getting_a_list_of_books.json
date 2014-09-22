@@ -1,0 +1,49 @@
+{
+  "resource": "Books",
+  "http_method": "GET",
+  "route": "/books",
+  "description": "Getting a list of books",
+  "explanation": null,
+  "parameters": [
+    {
+      "name": "access_token",
+      "description": "Authorization Token"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/books?access_token=eb23a49b039461a2f9a7b59bcdb8a049",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/vnd.libraryapi.v1+json",
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "access_token": "eb23a49b039461a2f9a7b59bcdb8a049"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[{\"id\":293,\"title\":\"Title\",\"blurb\":\"blurb\",\"description\":\"description\",\"author\":{\"id\":288,\"name\":\"Christine Towne\"}}]",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/vnd.libraryapi.v1+json; charset=utf-8",
+        "ETag": "\"0b95ad2812fef8498e7c904ff9869ce4\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "854af768-a79c-44cf-8177-ebdbf7ae32fd",
+        "X-Runtime": "0.021694",
+        "Content-Length": "117"
+      },
+      "response_content_type": "application/vnd.libraryapi.v1+json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/books?access_token=eb23a49b039461a2f9a7b59bcdb8a049\" -X GET \\\n\t-H \"Accept: application/vnd.libraryapi.v1+json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

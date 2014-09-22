@@ -1,0 +1,39 @@
+{
+  "resources": [
+    {
+      "name": "Books",
+      "examples": [
+        {
+          "description": "Creating a book",
+          "link": "books/creating_a_book.json",
+          "groups": "all"
+        },
+        {
+          "description": "Deleting a book",
+          "link": "books/deleting_a_book.json",
+          "groups": "all"
+        },
+        {
+          "description": "Getting a list of books",
+          "link": "books/getting_a_list_of_books.json",
+          "groups": "all"
+        },
+        {
+          "description": "Getting a specific book",
+          "link": "books/getting_a_specific_book.json",
+          "groups": "all"
+        },
+        {
+          "description": "Getting the headers",
+          "link": "books/getting_the_headers.json",
+          "groups": "all"
+        },
+        {
+          "description": "Updating a book title",
+          "link": "books/updating_a_book_title.json",
+          "groups": "all"
+        }
+      ]
+    }
+  ]
+}

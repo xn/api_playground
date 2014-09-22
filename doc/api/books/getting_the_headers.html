@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Books API</title>
+    <meta charset="utf-8">
+    <style>
+      td.required .name:after {
+        float: right;
+        content: "required";
+        font-weight: normal;
+        color: #F08080;
+      }
+
+      p {
+        padding: 15px;
+        font-size: 130%;
+      }
+
+      pre {
+        white-space: pre-wrap;
+      }
+
+      body {
+        margin-left: auto;
+        margin-right: auto;
+        width: 900px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Books API</h1>
+
+      <div class="article">
+        <h2>Getting the headers</h2>
+        <h3>HEAD /books</h3>
+
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">access_token</span>
+                </td>
+                <td>
+                  <span class="description">Authorization Token</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+
+          <h3>Request</h3>
+
+          <h4>Headers</h4>
+          <pre class="request headers">Accept: application/vnd.libraryapi.v1+json
+Content-Type: application/json
+Host: example.org
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">HEAD /books</pre>
+
+
+            <h4>Body</h4>
+            <pre class="request body">{"access_token":"a69c174bee6c62ef1c9ec367f8d36476"}</pre>
+
+            <h4>cURL</h4>
+            <pre class="request curl">curl &quot;http://localhost:3000/books?{&quot;access_token&quot;:&quot;a69c174bee6c62ef1c9ec367f8d36476&quot;}&quot; -X HEAD \
+	-H &quot;Accept: application/vnd.libraryapi.v1+json&quot; \
+	-H &quot;Content-Type: application/json&quot; \
+	-H &quot;Host: example.org&quot; \
+	-H &quot;Cookie: &quot;</pre>
+
+            <h3>Response</h3>
+            <h4>Headers</h4>
+            <pre class="response headers">X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Content-Type: application/vnd.libraryapi.v1+json; charset=utf-8
+ETag: &quot;958c10c2719cc020e66fc223c15e6420&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 3e89e55a-88b6-4429-beab-620965befa3d
+X-Runtime: 0.004684</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+      </div>
+    </div>
+  </body>
+</html>

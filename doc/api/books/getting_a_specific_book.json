@@ -1,0 +1,73 @@
+{
+  "resource": "Books",
+  "http_method": "GET",
+  "route": "/books/:id",
+  "description": "Getting a specific book",
+  "explanation": null,
+  "parameters": [
+    {
+      "name": "access_token",
+      "description": "Authorization Token"
+    },
+    {
+      "required": true,
+      "name": "id",
+      "description": "Id"
+    }
+  ],
+  "response_fields": [
+    {
+      "scope": "book",
+      "name": "id",
+      "description": "Id"
+    },
+    {
+      "scope": "book",
+      "name": "title",
+      "description": "Title"
+    },
+    {
+      "scope": "book",
+      "name": "description",
+      "description": "Description"
+    },
+    {
+      "scope": "book",
+      "name": "blurb",
+      "description": "Excerpt of Text"
+    }
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/books/299?access_token=31f19480d43263426fdb8980a299331b",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/vnd.libraryapi.v1+json",
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+        "access_token": "31f19480d43263426fdb8980a299331b"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\"book\":{\"id\":299,\"title\":\"Title\",\"blurb\":\"blurb\",\"description\":\"description\",\"author\":{\"id\":294,\"name\":\"Martina Nader\"}}}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/vnd.libraryapi.v1+json; charset=utf-8",
+        "ETag": "\"675f866becd50228937ed5cebc1e54ff\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "6f024f07-d181-4855-8954-6efc9db818a9",
+        "X-Runtime": "0.005462",
+        "Content-Length": "122"
+      },
+      "response_content_type": "application/vnd.libraryapi.v1+json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/books/299?access_token=31f19480d43263426fdb8980a299331b\" -X GET \\\n\t-H \"Accept: application/vnd.libraryapi.v1+json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

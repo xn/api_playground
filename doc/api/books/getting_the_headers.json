@@ -1,0 +1,47 @@
+{
+  "resource": "Books",
+  "http_method": "HEAD",
+  "route": "/books",
+  "description": "Getting the headers",
+  "explanation": null,
+  "parameters": [
+    {
+      "name": "access_token",
+      "description": "Authorization Token"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "HEAD",
+      "request_path": "/books",
+      "request_body": "{\"access_token\":\"a69c174bee6c62ef1c9ec367f8d36476\"}",
+      "request_headers": {
+        "Accept": "application/vnd.libraryapi.v1+json",
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": null,
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "application/vnd.libraryapi.v1+json; charset=utf-8",
+        "ETag": "\"958c10c2719cc020e66fc223c15e6420\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "3e89e55a-88b6-4429-beab-620965befa3d",
+        "X-Runtime": "0.004684"
+      },
+      "response_content_type": "application/vnd.libraryapi.v1+json; charset=utf-8",
+      "curl": "curl \"http://localhost:3000/books?{\"access_token\":\"a69c174bee6c62ef1c9ec367f8d36476\"}\" -X HEAD \\\n\t-H \"Accept: application/vnd.libraryapi.v1+json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}

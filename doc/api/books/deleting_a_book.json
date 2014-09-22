@@ -1,0 +1,45 @@
+{
+  "resource": "Books",
+  "http_method": "DELETE",
+  "route": "/books/:id",
+  "description": "Deleting a book",
+  "explanation": null,
+  "parameters": [
+    {
+      "name": "access_token",
+      "description": "Authorization Token"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "DELETE",
+      "request_path": "/books/295",
+      "request_body": "{\"access_token\":\"b23dac9ebeab22d97dcb5296718f0a34\"}",
+      "request_headers": {
+        "Accept": "application/vnd.libraryapi.v1+json",
+        "Content-Type": "application/json",
+        "Host": "example.org",
+        "Cookie": ""
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 204,
+      "response_status_text": "No Content",
+      "response_body": null,
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "cd985d76-01b9-45b3-bba4-8679d1626ee8",
+        "X-Runtime": "0.005994"
+      },
+      "response_content_type": null,
+      "curl": "curl \"http://localhost:3000/books/295\" -d '{\"access_token\":\"b23dac9ebeab22d97dcb5296718f0a34\"}' -X DELETE \\\n\t-H \"Accept: application/vnd.libraryapi.v1+json\" \\\n\t-H \"Content-Type: application/json\" \\\n\t-H \"Host: example.org\" \\\n\t-H \"Cookie: \""
+    }
+  ]
+}
